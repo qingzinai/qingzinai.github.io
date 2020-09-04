@@ -2,3 +2,8 @@ avatar:
   url: /images/Dorothy.jpg # 你的头像图片地址
   rounded: true
   opacity: 1
+deploy:
+  type: git
+  repo: https://github.com/qingzinai/qingzinai.github.io  # 比如：https://github.com/YunYouJun/yunyoujun.github.io
+  branch: hexo # 默认使用 master 分支
+  message: 初次提交 # 你可以自定义此次部署更新的说明
