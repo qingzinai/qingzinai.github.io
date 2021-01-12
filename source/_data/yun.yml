@@ -2,7 +2,7 @@ avatar:
   url: /images/Dorothy.jpg # 你的头像图片地址
   rounded: true
   opacity: 1
-mode: light #暗色模式
+mode: dark
 banner:
   title: 紫奈の肥宅屋
 social:
@@ -22,5 +22,31 @@ social:
     link: https://space.bilibili.com/24959205
     icon: icon-bilibili-line
     color: "#FF8EB3"
-reward: 
-  - enable: fasle 
+reward:
+  enable: false
+baidu_push: true #百度自动推送
+# livere: #来必力评论系统
+#   enable: true
+#   uid: MTAyMC81MTUxMS8yNzk5Mg==
+github_issues:
+  enable: true
+  username: qingzinai
+  repository: qingzinai.github.io
+  filters: is:issue
+valine:
+  enable: true
+  appId: bozharCdQUIykRCwqxffstsX-gzGzoHsz # your leancloud application appid
+  appKey: U0wFr9fXkjuqmUu0wNgbOHku # your leancloud application appkey
+  placeholder: 告诉我你的意见与想法吧! # comment box placeholder
+  meta:
+    - nick
+    - mail
+    - link
+  pageSize: 10 # pagination size
+  lang: zh-CN
+live2d:
+  enable: false
+footer:
+  beian:
+    enable: true
+    icp: 鄂ICP备2020017088号-1
