@@ -2,7 +2,18 @@ avatar:
   url: /images/Dorothy.jpg # 你的头像图片地址
   rounded: true
   opacity: 1
+girls:
+  enable: true #二刺猿女孩
 mode: dark
+pages:
+  - name: 我的小伙伴们
+    url: /links/
+    icon: icon-genderless-line
+    color: dodgerblue
+  - name: 我的老婆
+    url: /girls/
+    icon: icon-women-line
+    color: hotpink
 banner:
   title: 紫奈の肥宅屋
 social:
