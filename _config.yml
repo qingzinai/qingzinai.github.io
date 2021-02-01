@@ -5,7 +5,7 @@
 # Site
 title: 紫奈の肥宅屋
 subtitle: ""
-description: ""
+description: "只有付出才能得到,即是等价交换."
 keywords:
 author: 紫奈
 language: zh-CN
@@ -105,4 +105,4 @@ deploy:
   type: git
   repo: https://github.com/qingzinai/qingzinai.github.io # 比如：https://github.com/YunYouJun/yunyoujun.github.io
   branch: master # 默认使用 master 分支
-  message: 域名更换 # 你可以自定义此次部署更新的说明
+  message: 文章更新 # 你可以自定义此次部署更新的说明
