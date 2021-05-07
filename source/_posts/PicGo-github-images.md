@@ -38,7 +38,7 @@ categories: 紫奈的技术分享
 > 使用方法，非常简单，即把图片地址链接域名改为 CDN 的域名。格式如下：
 > https://cdn.jsdelivr.net/gh/<你的github用户名>/<你的图床仓库名>@<仓库版本号>/图片的路径
 > 这里的版本号指的是分支名以前github默认为masrter现在是main不要搞错
-> 这里放出一份改完后的图片地址:ttps://cdn.jsdelivr.net/gh/qingzinai/qingzinai-image@main/WX20210126-165633@2x.png
+> 这里放出一份改完后的图片地址:https://cdn.jsdelivr.net/gh/qingzinai/qingzinai-image@main/WX20210126-165633@2x.png
 > 其他说明，可参考 jsDelivr 官网介绍
 
 ### 创建github图床Token
