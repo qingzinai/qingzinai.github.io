@@ -1,0 +1,394 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="紫奈"><meta name="copyright" content="紫奈"><meta name="generator" content="Hexo 5.1.1"><meta name="theme" content="hexo-theme-yun"><title>如何使你的git提交信息变得可爱 | 紫奈の肥宅屋</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="none" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.19/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_stqaphw3j4.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link rel="shortcut icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="/css/hexo-theme-yun.css"><link rel="alternate" href="/atom.xml" title="紫奈の肥宅屋" type="application/atom+xml"><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"root":"/","title":"紫奈の肥宅屋","version":"1.0.0","anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><meta name="description" content="关于什么是gitmoji Gitmoji 是一个 GitHub 提交信息的 emoji 指南。致力于成为一个标准化的备忘单 —— 在 GitHub 提交信息上使用 emoji 的指南。在提交信息时使用 emoji提供了一种简单的方式来识别提交的目的和意图，只需要看一眼所使用的 emoji 就好了。因为有很多的 emoji，所以创建一份指南来让使用 emoji 变得轻松这件事就很有必要了。  git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何使你的git提交信息变得可爱">
+<meta property="og:url" content="http://qingzinai.com/2021/05/13/gitmoji/index.html">
+<meta property="og:site_name" content="紫奈の肥宅屋">
+<meta property="og:description" content="关于什么是gitmoji Gitmoji 是一个 GitHub 提交信息的 emoji 指南。致力于成为一个标准化的备忘单 —— 在 GitHub 提交信息上使用 emoji 的指南。在提交信息时使用 emoji提供了一种简单的方式来识别提交的目的和意图，只需要看一眼所使用的 emoji 就好了。因为有很多的 emoji，所以创建一份指南来让使用 emoji 变得轻松这件事就很有必要了。  git">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-13T00:41:37.665Z">
+<meta property="article:modified_time" content="2021-05-13T00:50:45.475Z">
+<meta property="article:author" content="紫奈">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="紫奈"><img width="96" loading="lazy" src="/images/Dorothy.jpg" alt="紫奈"></a><div class="site-author-name"><a href="/about/">紫奈</a></div><a class="site-name" href="/about/site.html">紫奈の肥宅屋</a><sub class="site-subtitle"></sub><div class="site-desciption">只有付出才能得到,即是等价交换.</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">4</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://wpa.qq.com/msgrd?v=3&amp;uin=2150495552&amp;site=qq&amp;menu=yes" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/qingzinai" title="GitHub" target="_blank" style="color:#181717"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=445429205" title="网易云音乐" target="_blank" style="color:#C10D0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/24959205" title="哔哩哔哩动画" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a><a class="links-item hty-icon-button" href="/girls/" title="我的老婆" style="color:hotpink"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-women-line"></use></svg></a></div></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E4%BB%80%E4%B9%88%E6%98%AFgitmoji"><span class="toc-number">1.</span> <span class="toc-text">关于什么是gitmoji</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#gitmoji%E7%9A%84%E7%94%A8%E5%A4%84"><span class="toc-number">1.1.</span> <span class="toc-text">gitmoji的用处</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">安装方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitmoji%E8%A1%A8"><span class="toc-number">1.3.</span> <span class="toc-text">gitmoji表</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://qingzinai.com/2021/05/13/gitmoji/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="紫奈"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="紫奈の肥宅屋"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">如何使你的git提交信息变得可爱</h1><div class="post-meta"><div class="post-time" style="display:inline-block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2021-05-13 08:41:37" itemprop="dateCreated datePublished" datetime="2021-05-13T08:41:37+08:00">2021-05-13</time></div><div class="post-classify"><span class="post-category"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span> <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category" href="/categories/%E7%B4%AB%E5%A5%88%E7%9A%84%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">紫奈的技术分享</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag" href="/tags/git/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">git</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h1 id="关于什么是gitmoji"><a href="#关于什么是gitmoji" class="headerlink" title="关于什么是gitmoji"></a>关于什么是gitmoji</h1><blockquote>
+<p>Gitmoji 是一个 GitHub 提交信息的 emoji 指南。致力于成为一个标准化的备忘单 —— 在 GitHub 提交信息上使用 emoji 的指南。<br>在提交信息时使用 emoji提供了一种简单的方式来识别提交的目的和意图，只需要看一眼所使用的 emoji 就好了。因为有很多的 emoji，所以创建一份指南来让使用 emoji 变得轻松这件事就很有必要了。</p>
+</blockquote>
+<h2 id="gitmoji的用处"><a href="#gitmoji的用处" class="headerlink" title="gitmoji的用处"></a>gitmoji的用处</h2><blockquote>
+<p>可以让你的commit能一目了然的知道这次更新了什么通过emoji的语义化甚至可以不加额外的信息</p>
+</blockquote>
+<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><blockquote>
+<p>npm i -g gitmoji-cli</p>
+</blockquote>
+<h2 id="gitmoji表"><a href="#gitmoji表" class="headerlink" title="gitmoji表"></a>gitmoji表</h2><table>
+<thead>
+<tr>
+<th>emoji</th>
+<th>emoji code</th>
+<th>desc</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🎨</td>
+<td>:art:</td>
+<td>Improving structure / format of the code.</td>
+</tr>
+<tr>
+<td>⚡️</td>
+<td>:zap:</td>
+<td>Improving performance.</td>
+</tr>
+<tr>
+<td>🔥</td>
+<td>:fire:</td>
+<td>Removing code or files.</td>
+</tr>
+<tr>
+<td>🐛</td>
+<td>:bug:</td>
+<td>Fixing a bug.</td>
+</tr>
+<tr>
+<td>🚑</td>
+<td>:ambulance:</td>
+<td>Critical hotfix.</td>
+</tr>
+<tr>
+<td>✨</td>
+<td>:sparkles:</td>
+<td>Introducing new features.</td>
+</tr>
+<tr>
+<td>📝</td>
+<td>:pencil:</td>
+<td>Writing docs.</td>
+</tr>
+<tr>
+<td>🚀</td>
+<td>:rocket:</td>
+<td>Deploying stuff.</td>
+</tr>
+<tr>
+<td>💄</td>
+<td>:lipstick:</td>
+<td>Updating the UI and style files.</td>
+</tr>
+<tr>
+<td>🎉</td>
+<td>:tada:</td>
+<td>Initial commit.</td>
+</tr>
+<tr>
+<td>✅</td>
+<td>:white_check_mark:</td>
+<td>Updating tests.</td>
+</tr>
+<tr>
+<td>🔒</td>
+<td>:lock:</td>
+<td>Fixing security issues.</td>
+</tr>
+<tr>
+<td>🍎</td>
+<td>:apple:</td>
+<td>Fixing something on macOS.</td>
+</tr>
+<tr>
+<td>🐧</td>
+<td>:penguin:</td>
+<td>Fixing something on Linux.</td>
+</tr>
+<tr>
+<td>🏁</td>
+<td>:checkered_flag:</td>
+<td>Fixing something on Windows.</td>
+</tr>
+<tr>
+<td>🤖</td>
+<td>:robot:</td>
+<td>Fixing something on Android.</td>
+</tr>
+<tr>
+<td>🍏</td>
+<td>:green_apple:</td>
+<td>Fixing something on iOS.</td>
+</tr>
+<tr>
+<td>🔖</td>
+<td>:bookmark:</td>
+<td>Releasing / Version tags.</td>
+</tr>
+<tr>
+<td>🚨</td>
+<td>:rotating_light:</td>
+<td>Removing linter warnings.</td>
+</tr>
+<tr>
+<td>🚧</td>
+<td>:construction:</td>
+<td>Work in progress.</td>
+</tr>
+<tr>
+<td>💚</td>
+<td>:green_heart:</td>
+<td>Fixing CI Build.</td>
+</tr>
+<tr>
+<td>⬆️</td>
+<td>:arrow_up:</td>
+<td>Upgrading dependencies.</td>
+</tr>
+<tr>
+<td>⬇️</td>
+<td>:arrow_down:</td>
+<td>Downgrading dependencies.</td>
+</tr>
+<tr>
+<td>📌</td>
+<td>:pushpin:</td>
+<td>Pinning dependencies to specific versions.</td>
+</tr>
+<tr>
+<td>👷</td>
+<td>:construction_worker:</td>
+<td>Adding CI build system.</td>
+</tr>
+<tr>
+<td>📈</td>
+<td>:chart_with_upwards_trend:</td>
+<td>Adding analytics or tracking code.</td>
+</tr>
+<tr>
+<td>♻️</td>
+<td>:recycle:</td>
+<td>Refactoring code.</td>
+</tr>
+<tr>
+<td>🐳</td>
+<td>:whale:</td>
+<td>Work about Docker.</td>
+</tr>
+<tr>
+<td>➕</td>
+<td>:heavy_plus_sign:</td>
+<td>Adding a dependency.</td>
+</tr>
+<tr>
+<td>➖</td>
+<td>:heavy_minus_sign:</td>
+<td>Removing a dependency.</td>
+</tr>
+<tr>
+<td>🔧</td>
+<td>:wrench:</td>
+<td>Changing configuration files.</td>
+</tr>
+<tr>
+<td>🌐</td>
+<td>:globe_with_meridians:</td>
+<td>Internationalization and localization.</td>
+</tr>
+<tr>
+<td>✏️</td>
+<td>:pencil2:</td>
+<td>Fixing typos.</td>
+</tr>
+<tr>
+<td>💩</td>
+<td>:poop:</td>
+<td>Writing bad code that needs to be improved.</td>
+</tr>
+<tr>
+<td>⏪</td>
+<td>:rewind:</td>
+<td>Reverting changes.</td>
+</tr>
+<tr>
+<td>🔀</td>
+<td>:twisted_rightwards_arrows:</td>
+<td>Merging branches.</td>
+</tr>
+<tr>
+<td>📦</td>
+<td>:package:</td>
+<td>Updating compiled files or packages.</td>
+</tr>
+<tr>
+<td>👽</td>
+<td>:alien:</td>
+<td>Updating code due to external API changes.</td>
+</tr>
+<tr>
+<td>🚚</td>
+<td>:truck:</td>
+<td>Moving or renaming files.</td>
+</tr>
+<tr>
+<td>📄</td>
+<td>:page_facing_up:</td>
+<td>Adding or updating license.</td>
+</tr>
+<tr>
+<td>💥</td>
+<td>:boom:</td>
+<td>Introducing breaking changes.</td>
+</tr>
+<tr>
+<td>🍱</td>
+<td>:bento:</td>
+<td>Adding or updating assets.</td>
+</tr>
+<tr>
+<td>👌</td>
+<td>:ok_hand:</td>
+<td>Updating code due to code review changes.</td>
+</tr>
+<tr>
+<td>♿️</td>
+<td>:wheelchair:</td>
+<td>Improving accessibility.</td>
+</tr>
+<tr>
+<td>💡</td>
+<td>:bulb:</td>
+<td>Documenting source code.</td>
+</tr>
+<tr>
+<td>🍻</td>
+<td>:beers:</td>
+<td>Writing code drunkenly.</td>
+</tr>
+<tr>
+<td>💬</td>
+<td>:speech_balloon:</td>
+<td>Updating text and literals.</td>
+</tr>
+<tr>
+<td>🗃</td>
+<td>:card_file_box:</td>
+<td>Performing database related changes.</td>
+</tr>
+<tr>
+<td>🔊</td>
+<td>:loud_sound:</td>
+<td>Adding logs.</td>
+</tr>
+<tr>
+<td>🔇</td>
+<td>:mute:</td>
+<td>Removing logs.</td>
+</tr>
+<tr>
+<td>👥</td>
+<td>:busts_in_silhouette:</td>
+<td>Adding contributor(s).</td>
+</tr>
+<tr>
+<td>🚸</td>
+<td>:children_crossing:</td>
+<td>Improving user experience / usability.</td>
+</tr>
+<tr>
+<td>🏗</td>
+<td>:building_construction:</td>
+<td>Making architectural changes.</td>
+</tr>
+<tr>
+<td>📱</td>
+<td>:iphone:</td>
+<td>Working on responsive design.</td>
+</tr>
+<tr>
+<td>🤡</td>
+<td>:clown_face:</td>
+<td>Mocking things.</td>
+</tr>
+<tr>
+<td>🥚</td>
+<td>:egg:</td>
+<td>Adding an easter egg.</td>
+</tr>
+<tr>
+<td>🙈</td>
+<td>:see_no_evil:</td>
+<td>Adding or updating a .gitignore file</td>
+</tr>
+<tr>
+<td>📸</td>
+<td>:camera_flash:</td>
+<td>Adding or updating snapshots</td>
+</tr>
+<tr>
+<td>⚗</td>
+<td>:alembic:</td>
+<td>Experimenting new things</td>
+</tr>
+<tr>
+<td>🔍</td>
+<td>:mag:</td>
+<td>Improving SEO</td>
+</tr>
+<tr>
+<td>☸️</td>
+<td>:wheel_of_dharma:</td>
+<td>Work about Kubernetes</td>
+</tr>
+<tr>
+<td>🏷️</td>
+<td>:label:</td>
+<td>Adding or updating types (Flow, TypeScript)</td>
+</tr>
+<tr>
+<td>🌱</td>
+<td>:seedling:</td>
+<td>Adding or updating seed files</td>
+</tr>
+<tr>
+<td>🚩</td>
+<td>:triangular_flag_on_post:</td>
+<td>Adding, updating, or removing feature flags</td>
+</tr>
+<tr>
+<td>💫</td>
+<td>:dizzy:</td>
+<td>Adding or updating animations and transitions</td>
+</tr>
+</tbody></table>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>紫奈</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://qingzinai.com/2021/05/13/gitmoji/" title="如何使你的git提交信息变得可爱">http://qingzinai.com/2021/05/13/gitmoji/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2021/01/26/PicGo-github-images/" rel="next" title="关于如何搭建一个github图床并用PicGo管理"><span class="post-nav-text">关于如何搭建一个github图床并用PicGo管理</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div id="comment"><div class="comment-tooltip text-center"><span>点击按钮跳转 GitHub Issues 评论。</span><br><span>若没有本文 Issue，您可以使用 Comment 模版新建。</span><br><a class="hty-button hty-button--raised" id="github-issues" target="_blank" rel="noopener" href="https://github.com/qingzinai/qingzinai.github.io/issues?q=is:issue+如何使你的git提交信息变得可爱">GitHub Issues</a></div><div id="valine-container"></div><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script>function initValine() {
+  const valineConfig = {"enable":true,"appId":"bozharCdQUIykRCwqxffstsX-gzGzoHsz","appKey":"U0wFr9fXkjuqmUu0wNgbOHku","placeholder":"告诉我你的意见与想法吧!","avatar":null,"pageSize":10,"visitor":false,"highlight":true,"recordIP":false,"enableQQ":true,"meta":["nick","mail","link"],"lang":"zh-cn","el":"#valine-container"}
+  valineConfig.path = window.location.pathname
+  new Valine(valineConfig)
+}
+setTimeout(initValine, 1000)</script></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">鄂ICP备2020017088号-1</a></div><div class="copyright"><span>&copy; 2019 – 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> 紫奈</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.1.1</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.0.0</span></div><div class="live_time"><span>肥宅小屋已开始接客</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  window.setTimeout(blog_live_time, 1000);
+  const start = new Date('2020-09-08T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div></footer><a class="hty-icon-button" id="goUp" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></div><script defer src="/js/utils.js"></script><script defer src="/js/hexo-theme-yun.js"></script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
