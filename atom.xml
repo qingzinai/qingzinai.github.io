@@ -6,7 +6,7 @@
   <link href="http://qingzinai.com/atom.xml" rel="self"/>
   
   <link href="http://qingzinai.com/"/>
-  <updated>2021-10-20T02:37:34.494Z</updated>
+  <updated>2021-10-20T03:05:32.681Z</updated>
   <id>http://qingzinai.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue3+vite 常用配置</title>
+    <link href="http://qingzinai.com/2021/10/20/vu3-vite-setting/"/>
+    <id>http://qingzinai.com/2021/10/20/vu3-vite-setting/</id>
+    <published>2021-10-20T02:48:44.359Z</published>
+    <updated>2021-10-20T03:05:32.681Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="vue3-vite-常用配置-不断更新中"><a href="#vue3-vite-常用配置-不断更新中" class="headerlink" title="vue3+vite 常用配置(不断更新中)"></a>vue3+vite 常用配置(不断更新中)</h1><h2 id="配置-符号替换路径"><a href="#配置-符号替换路径" class="headerlink" title="配置@符号替换路径"></a>配置@符号替换路径</h2><blockquote><p><img src="https://cdn.jsdelivr.net/gh/qingzinai/qingzinai-image@main/WX20211020-110202@2x.png" alt="avatar" loading="lazy"></p></blockquote><h2 id="开启本地-IP-地址作为访问路径"><a href="#开启本地-IP-地址作为访问路径" class="headerlink" title="开启本地 IP 地址作为访问路径"></a>开启本地 IP 地址作为访问路径</h2><blockquote><p><img src="https://cdn.jsdelivr.net/gh/qingzinai/qingzinai-image@main/WX20211020-110459@2x.png" alt="avatar" loading="lazy"></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;vue3-vite-常用配置-不断更新中&quot;&gt;&lt;a href=&quot;#vue3-vite-常用配置-不断更新中&quot; class=&quot;headerlink&quot; title=&quot;vue3+vite 常用配置(不断更新中)&quot;&gt;&lt;/a&gt;vue3+vite 常用配置(不断更新中)&lt;/h1</summary>
+      
+    
+    
+    
+    <category term="vue" scheme="http://qingzinai.com/categories/vue/"/>
+    
+    
+    <category term="vue3" scheme="http://qingzinai.com/tags/vue3/"/>
+    
+    <category term="vite" scheme="http://qingzinai.com/tags/vite/"/>
+    
+    <category term="typescript" scheme="http://qingzinai.com/tags/typescript/"/>
+    
+  </entry>
   
   <entry>
     <title>vue3使用mock.js</title>
